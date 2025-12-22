@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Chaplaincy</title>
+    <meta name="description" content="A Christian support system for emergency first responder crews and victims of trauma.">
+    <link rel="icon" type="image/svg+xml" href="assets/EMS Logo Gold Transparent.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased overflow-x-hidden selection:bg-yellow-500 selection:text-purple-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
+                    <!-- Icon representing Logo -->
+                    <div class="w-10 h-10 flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-700">
+                        <img src="assets/EMS Logo Gold Transparent.svg" alt="EMS Chaplaincy Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-white font-serif font-bold text-lg tracking-wider hidden sm:block group-hover:text-yellow-400 transition-colors">EMS <span class="text-yellow-500 group-hover:text-white transition-colors">CHAPLAINCY</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Home</a>
+                        <a href="#about" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">About Us</a>
+                        <a href="#services" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Services</a>
+                        <a href="#involve" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Get Involved</a>
+                        <a href="#contact" class="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-yellow-600/20 transition-all transform hover:scale-105 hover:shadow-yellow-500/40 btn-shine">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="bg-slate-800/50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none backdrop-blur-sm border border-white/10">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#contact" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold bg-slate-800/50">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-fixed bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1587745416684-47953f16f0ae?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <!-- Animated Particles/Gradient blobs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-700 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
+        
+        <!-- Heartbeat Animation (Center) -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-600 rounded-full mix-blend-screen filter blur-[100px] animate-heartbeat pointer-events-none"></div>
+
+        <div class="relative z-30 text-center px-4 max-w-6xl mx-auto mt-10" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 mb-6 px-6 py-2 border border-yellow-500/30 rounded-full bg-slate-900/60 backdrop-blur-md animate-float">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-yellow-400 text-xs sm:text-sm font-semibold tracking-widest uppercase">NPC 2016/043083/08 • Serving Since 2015</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-8 text-shadow leading-tight">
+                Not To Be Seen <br/>
+                <span class="relative inline-block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600">But To See</span>
+                </span> <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600">People Through</span>
+            </h1>
+            
+            <div class="relative max-w-3xl mx-auto mb-12 group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-purple-800 to-yellow-700 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative p-6 bg-slate-900/50 backdrop-blur-sm rounded-lg border-l-4 border-yellow-500">
+                    <p class="text-xl md:text-2xl text-slate-200 font-light italic">
+                        "My grace is sufficient for you, for my power is made perfect in weakness."
+                        <span class="text-yellow-400 text-base font-semibold block mt-2 not-italic">— 2 Corinthians 12:9</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#contact" class="btn-shine px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-500 text-white font-bold rounded-lg shadow-lg shadow-yellow-900/30 transform transition hover:-translate-y-1 hover:shadow-yellow-500/50 flex items-center justify-center gap-2 relative z-40">
+                    <i class="fas fa-hand-holding-heart"></i> Request Support
+                </a>
+                <a href="#about" class="px-8 py-4 bg-slate-800/40 backdrop-blur-md border border-white/10 text-white font-bold rounded-lg shadow-lg hover:bg-slate-800/60 hover:border-yellow-400/30 transition duration-300 flex items-center justify-center gap-2 relative z-40">
+                    Learn More <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wave Divider (Fills with Slate-900) -->
+        <div class="custom-shape-divider-bottom-1 z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-slate-900 pt-10 pb-20 relative z-30 -mt-2">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-800">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl font-bold text-white mb-2 font-serif counter" data-target="2015">0</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Founded</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2 font-serif">24/7</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Availability</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-white mb-2 font-serif">NPO</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Registered</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2 font-serif">100%</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-semibold">Dedication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Mission Section -->
+    <section id="about" class="py-20 bg-slate-900 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-block px-4 py-1 bg-slate-800 border border-slate-700 text-purple-300 rounded-full text-xs font-bold uppercase tracking-wide mb-4">Our Mission</div>
+                    <h2 class="text-white font-serif text-4xl md:text-5xl font-bold mb-6 relative leading-tight">
+                        Serving the First <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Responders & Victims</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        EMS Chaplaincy acts as a spiritual anchor in the chaos of emergency scenes. Founded by Chief Commander Chaplain Gerta Coetzee, we bridge the gap between physical rescue and emotional recovery.
+                    </p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        We are spiritual representatives in a secular world. We act as a neutral resource, stabilizing emotions and supporting those who save lives.
+                    </p>
+                    
+                    <div class="relative p-6 bg-slate-800 rounded-xl border-l-4 border-purple-600 shadow-xl hover:shadow-2xl transition-shadow">
+                        <i class="fas fa-quote-right absolute top-4 right-4 text-4xl text-slate-700 opacity-50"></i>
+                        <p class="text-purple-200 font-serif italic text-lg relative z-10">"So do not fear, for I am with you; do not be dismayed, for I am your God."</p>
+                        <p class="text-sm text-yellow-500 font-bold mt-2 uppercase tracking-wider">— Isaiah 41:10</p>
+                    </div>
+                </div>
+                
+                <div class="relative group" data-aos="fade-left">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-purple-800 to-yellow-700 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] slideshow-container">
+                        <!-- Slide 1 -->
+                        <div class="slide fade-slide active">
+                            <img src="assets/Slides/487532637_1063083412518286_7322304624846415273_n.jpg" alt="First responders support" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Trauma Support</span>
+                                <p class="text-white font-serif text-2xl">Restoring Hope in Crisis</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/490416079_1079637697529524_5863576212527249108_n.jpg" alt="Serving with compassion" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Love in Action</span>
+                                <p class="text-white font-serif text-2xl">"Bear one another's burdens" - Galatians 6:2</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/546341321_2292916607814072_6010616530174699663_n.jpg" alt="Faithful service" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Faithful Presence</span>
+                                <p class="text-white font-serif text-2xl">"I am with you always" - Matthew 28:20</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/579092122_1249022107257748_6290628390888183249_n.jpg" alt="Healing hands" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Healing Touch</span>
+                                <p class="text-white font-serif text-2xl">"He heals the brokenhearted" - Psalm 147:3</p>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/579290814_1249013497258609_8020676889136946768_n.jpg" alt="Peace in chaos" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Peace Be Still</span>
+                                <p class="text-white font-serif text-2xl">"Peace I leave with you" - John 14:27</p>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/584268085_1259808986179060_249879043036072472_n.jpg" alt="Strength in weakness" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Strength in Weakness</span>
+                                <p class="text-white font-serif text-2xl">"My grace is sufficient" - 2 Corinthians 12:9</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-800 rounded-full p-2 shadow-2xl hidden md:block animate-float border border-slate-700">
+                        <div class="w-full h-full rounded-full border-2 border-dashed border-purple-500/30 flex items-center justify-center bg-slate-900">
+                            <div class="text-center">
+                                <i class="fas fa-heart text-red-500 text-2xl mb-1"></i>
+                                <span class="block text-xs font-bold text-slate-300">Care<br>Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Roles Section -->
+    <section id="services" class="py-24 bg-slate-950 relative overflow-hidden">
+        <!-- Top Curve (Matches previous section Slate-900) -->
+        <div class="custom-shape-divider-top-1 text-slate-900">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.05]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-white mb-4">Our Core Pillars</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">Specialized support structures providing emotional first aid and spiritual guidance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Chaplaincy -->
+                <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-purple-900/20 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-slate-700/50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150 group-hover:bg-purple-900/30 z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-slate-800 shadow-md border border-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-bible text-2xl text-purple-400 group-hover:text-yellow-400 transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">Chaplains</h3>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Ambassadors of Christ placed in every sector. We perform weddings, funerals, and provide spiritual advocacy.</p>
+                        <ul class="text-sm text-slate-500 space-y-3">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i>Spiritual Guidance</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i>Ceremonial Duties</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-purple-500 mr-2"></i>Pastoral Counseling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Trauma Support (Highlighted) -->
+                <div class="bg-gradient-to-br from-purple-900 via-purple-950 to-slate-900 rounded-2xl p-8 shadow-2xl border border-yellow-500/20 card-hover transform md:-translate-y-6 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Glow effect -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-500 rounded-full mix-blend-overlay filter blur-3xl animate-heartbeat"></div>
+                    
+                    <div class="absolute top-4 right-4 bg-yellow-500/10 backdrop-blur-sm border border-yellow-500/30 text-yellow-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        <i class="fas fa-star mr-1"></i> Critical Role
+                    </div>
+
+                    <div class="w-16 h-16 bg-slate-800/50 rounded-2xl rotate-3 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform border border-white/10">
+                        <i class="fas fa-hands-holding-circle text-3xl text-yellow-400"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-serif font-bold text-white mb-4">Trauma Support</h3>
+                    <p class="text-purple-200 mb-6 text-sm leading-relaxed border-l-2 border-yellow-500/30 pl-3">
+                        Vital support on emergency scenes. We ground victims of violent crime and accidents, providing emotional first aid when it matters most.
+                    </p>
+                    <ul class="text-sm text-purple-200 space-y-3">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-yellow-500 mr-2"></span>Scene Stabilization</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-yellow-500 mr-2"></span>Emotional Containment</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-yellow-500 mr-2"></span>Information Relay</li>
+                    </ul>
+                    
+                    <!-- Small ECG Line inside Card (Slower, Subtle, Neon Purple Glow, Transparent BG) -->
+                    <div class="w-full h-10 mt-4 opacity-80 flex items-center overflow-hidden">
+                        <svg viewBox="0 0 200 50" class="w-full h-full" preserveAspectRatio="none">
+                            <path d="M0,25 L20,25 L25,10 L30,40 L35,5 L40,45 L45,25 L70,25 L75,10 L80,40 L85,5 L90,45 L95,25 L120,25 L125,10 L130,40 L135,5 L140,45 L145,25 L200,25" 
+                                  class="ecg-line stroke-neon-purple neon-ecg" style="animation-duration: 8s;" />
+                        </svg>
+                    </div>
+
+                    <a href="#contact" class="mt-4 inline-block w-full text-center py-2 bg-yellow-600 hover:bg-yellow-500 text-white font-bold rounded-lg transition text-sm uppercase tracking-wide">Request Assistance</a>
+                </div>
+
+                <!-- Card 3: Care Support -->
+                <div class="glass-card rounded-2xl p-8 shadow-lg hover:shadow-green-900/20 card-hover group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-slate-700/50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150 group-hover:bg-green-900/30 z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-slate-800 shadow-md border border-slate-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-heart-pulse text-2xl text-purple-400 group-hover:text-green-500 transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">Care Support</h3>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Support beyond the siren. We handle hospital visits, family follow-ups, and practical assistance away from the immediate scene.</p>
+                        <ul class="text-sm text-slate-500 space-y-3">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Hospital Visitation</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Family Follow-ups</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2"></i>Logistical Help</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Quote Section -->
+    <section class="relative py-40 bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-slate-900/90 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-950 opacity-90"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <i class="fas fa-cross text-7xl text-yellow-500/50 mb-8 block mx-auto drop-shadow-2xl"></i>
+            </div>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-md" data-aos="fade-up">
+                "Is anyone among you sick? Let him call for the elders."
+            </h2>
+            <div class="w-32 h-1 bg-yellow-500 mx-auto rounded-full mb-8" data-aos="scale-x"></div>
+            <p class="text-yellow-400 text-xl font-medium tracking-widest uppercase" data-aos="fade-up" data-aos-delay="200">— James 5:14-16</p>
+        </div>
+    </section>
+
+    <!-- Get Involved / Donate -->
+    <section id="involve" class="py-24 bg-slate-950 relative">
+         <!-- Wave Divider Top (Matches Parallax/Slate-900 transition) -->
+         <div class="custom-shape-divider-top-1 text-slate-900 opacity-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl font-serif font-bold text-white mb-4">Make A Difference</h2>
+            <p class="text-slate-500 mb-12">Join hands with us to bring light to dark places.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Donate Card -->
+                <div class="group relative overflow-hidden bg-slate-800 p-10 rounded-3xl border border-slate-700 transition-all hover:shadow-2xl hover:border-purple-500/30" data-aos="fade-right">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-purple-900/20 rounded-full transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-slate-700 rounded-2xl shadow-inner flex items-center justify-center mx-auto mb-6 text-4xl text-purple-400 group-hover:text-purple-300 transition-colors">
+                            <i class="fas fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Donate</h3>
+                        <p class="text-slate-400 mb-8">Your financial contributions enable us to maintain equipment, train volunteers, and reach more scenes.</p>
+                        <button class="bg-purple-900 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-800 transition shadow-lg transform group-hover:-translate-y-1 border border-purple-700">Donate Now</button>
+                    </div>
+                </div>
+
+                <!-- Volunteer Card -->
+                <div class="group relative overflow-hidden bg-slate-800 p-10 rounded-3xl border border-slate-700 transition-all hover:shadow-2xl hover:border-yellow-500/30" data-aos="fade-left">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-yellow-900/20 rounded-full transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-slate-700 rounded-2xl shadow-inner flex items-center justify-center mx-auto mb-6 text-4xl text-yellow-500 group-hover:text-yellow-400 transition-colors">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Join The Team</h3>
+                        <p class="text-slate-400 mb-8">We need dedicated hearts. Whether as Chaplain, Trauma Support, or Care Support, your time is invaluable.</p>
+                        <button class="bg-yellow-600 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-500 transition shadow-lg transform group-hover:-translate-y-1">Volunteer Application</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-slate-900 to-black text-white relative overflow-hidden">
+        <!-- Wave Divider Top (Matches Involve/Slate-950) -->
+        <div class="custom-shape-divider-top-1 text-slate-950 z-20">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill custom-shape-divider-top-2"></path>
+            </svg>
+        </div>
+
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-600 rounded-full mix-blend-overlay filter blur-[80px] opacity-10 animate-heartbeat"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-overlay filter blur-[80px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-serif font-bold mb-4">Contact Us</h2>
+                    <div class="w-16 h-1 bg-yellow-500 rounded-full mb-6"></div>
+                    <p class="text-slate-300 mb-10 text-lg">We are here to support you. Please reach out for inquiries or assistance.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-500 transition-colors duration-300 border border-slate-700">
+                                <i class="fas fa-envelope text-yellow-400 text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Email Us</h3>
+                                <p class="text-slate-400 hover:text-white transition cursor-pointer">ems.chaplaincy@gmail.com</p>
+                                <p class="text-slate-400 hover:text-white transition cursor-pointer">support@emschaplaincy.org</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-500 transition-colors duration-300 border border-slate-700">
+                                <i class="fas fa-crown text-yellow-400 text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Leadership</h3>
+                                <p class="text-slate-400">Chief Commander Chaplain Gerta Coetzee</p>
+                                <p class="text-xs text-yellow-500/80 mt-1 uppercase tracking-wider font-semibold">Founder</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-500 transition-colors duration-300 border border-slate-700">
+                                <i class="fab fa-facebook-f text-yellow-400 text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Social Media</h3>
+                                <a href="#" class="text-slate-400 hover:text-yellow-400 transition underline decoration-slate-600 hover:decoration-yellow-400">EMS Chaplaincy</a>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-5 bg-red-900/20 border border-red-500/20 rounded-xl backdrop-blur-sm">
+                            <div class="flex gap-3">
+                                <i class="fas fa-exclamation-triangle text-red-400 mt-1"></i>
+                                <p class="text-sm text-red-200 leading-relaxed"><strong>Emergency Note:</strong> This site is not monitored 24/7. In a life-threatening emergency, please dial your local emergency services immediately.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 border border-white/5 shadow-2xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6 text-white font-serif">Send a Message</h3>
+                    <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you. This is a demo form.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="group">
+                                <label class="block text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 group-focus-within:text-yellow-400 transition-colors">Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-900/80 border border-slate-700 text-white placeholder-slate-600 focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition" placeholder="Your Name">
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 group-focus-within:text-yellow-400 transition-colors">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg bg-slate-900/80 border border-slate-700 text-white placeholder-slate-600 focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition" placeholder="Your Phone">
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 group-focus-within:text-yellow-400 transition-colors">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-slate-900/80 border border-slate-700 text-white placeholder-slate-600 focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition" placeholder="your@email.com">
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 group-focus-within:text-yellow-400 transition-colors">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-900/80 border border-slate-700 text-white placeholder-slate-600 focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-yellow-600 to-yellow-500 text-white font-bold rounded-lg hover:from-yellow-500 hover:to-yellow-400 transition shadow-lg transform active:scale-95 btn-shine">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-slate-500 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+            <div class="w-16 h-16 flex items-center justify-center mb-6">
+                <img src="assets/EMS Logo Gold Transparent.svg" alt="EMS Chaplaincy Logo" class="w-full h-full object-contain">
+            </div>
+            <div class="mb-6">
+                <span class="text-white font-serif font-bold text-2xl tracking-wide">EMS <span class="text-yellow-500">CHAPLAINCY</span></span>
+            </div>
+            <div class="flex gap-6 mb-8 text-sm font-medium">
+                <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+                <a href="#about" class="hover:text-yellow-400 transition">About</a>
+                <a href="#services" class="hover:text-yellow-400 transition">Services</a>
+                <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+            </div>
+            <p class="mb-4 text-xs text-slate-600">
+                <span class="mx-2">NPC: 2016/043083/08</span> | <span class="mx-2">NPO: 298-261</span>
+            </p>
+            <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> EMS Chaplaincy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
