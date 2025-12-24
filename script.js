@@ -196,26 +196,12 @@ function fadeOut(callback) {
     }, fadeInterval);
 }
 
-// Unmute and fade in audio on page load
-window.addEventListener('DOMContentLoaded', () => {
-    // Small delay to ensure audio is loaded
-    setTimeout(() => {
-        audio.play().then(() => {
-            audio.muted = false;
-            fadeIn();
-            showAudioNotification();
-        }).catch(error => {
-            console.log('Autoplay prevented, audio will start on user interaction:', error);
-        });
-    }, 100);
-});
-
 // Toggle audio on button click
 function toggleAudio() {
     if (audio.paused) {
         audio.play().then(() => {
-            audio.muted = false;
             fadeIn();
+            showAudioNotification();
         });
         audioIcon.className = 'fas fa-volume-up';
         audioIconMobile.className = 'fas fa-volume-up';
