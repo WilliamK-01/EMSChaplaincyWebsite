@@ -133,3 +133,100 @@ function showSlides() {
 if (slides.length > 0) {
     showSlides();
 }
+
+// Background Audio Control
+const audio = document.getElementById('backgroundAudio');
+const audioToggle = document.getElementById('audioToggle');
+const audioToggleMobile = document.getElementById('audioToggleMobile');
+const audioIcon = document.getElementById('audioIcon');
+const audioIconMobile = document.getElementById('audioIconMobile');
+const audioNotification = document.getElementById('audioNotification');
+
+// Show notification function
+function showAudioNotification() {
+    audioNotification.classList.remove('hidden', 'fade-out');
+    
+    // Hide after 3 seconds with fade out
+    setTimeout(() => {
+        audioNotification.classList.add('fade-out');
+        setTimeout(() => {
+            audioNotification.classList.add('hidden');
+        }, 300); // Wait for fade out animation
+    }, 3000);
+}
+
+// Fade in/out duration in milliseconds
+const fadeDuration = 1000;
+const fadeSteps = 50;
+const fadeInterval = fadeDuration / fadeSteps;
+
+// Fade in function
+function fadeIn() {
+    let currentStep = 0;
+    const targetVolume = 0.6;
+    const volumeStep = targetVolume / fadeSteps;
+    audio.volume = 0;
+    
+    const fadeInInterval = setInterval(() => {
+        currentStep++;
+        if (currentStep <= fadeSteps) {
+            audio.volume = Math.min(volumeStep * currentStep, targetVolume);
+        } else {
+            audio.volume = targetVolume;
+            clearInterval(fadeInInterval);
+        }
+    }, fadeInterval);
+}
+
+// Fade out function
+function fadeOut(callback) {
+    let currentStep = fadeSteps;
+    const currentVolume = audio.volume;
+    const volumeStep = currentVolume / fadeSteps;
+    
+    const fadeOutInterval = setInterval(() => {
+        currentStep--;
+        if (currentStep >= 0) {
+            audio.volume = Math.max(volumeStep * currentStep, 0);
+        } else {
+            audio.volume = 0;
+            clearInterval(fadeOutInterval);
+            if (callback) callback();
+        }
+    }, fadeInterval);
+}
+
+// Unmute and fade in audio on page load
+window.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure audio is loaded
+    setTimeout(() => {
+        audio.play().then(() => {
+            audio.muted = false;
+            fadeIn();
+            showAudioNotification();
+        }).catch(error => {
+            console.log('Autoplay prevented, audio will start on user interaction:', error);
+        });
+    }, 100);
+});
+
+// Toggle audio on button click
+function toggleAudio() {
+    if (audio.paused) {
+        audio.play().then(() => {
+            audio.muted = false;
+            fadeIn();
+        });
+        audioIcon.className = 'fas fa-volume-up';
+        audioIconMobile.className = 'fas fa-volume-up';
+    } else {
+        fadeOut(() => {
+            audio.pause();
+        });
+        audioIcon.className = 'fas fa-volume-mute';
+        audioIconMobile.className = 'fas fa-volume-mute';
+    }
+}
+
+audioToggle.addEventListener('click', toggleAudio);
+audioToggleMobile.addEventListener('click', toggleAudio);

@@ -43,6 +43,9 @@
                         <a href="#about" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">About Us</a>
                         <a href="#services" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Services</a>
                         <a href="#involve" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Get Involved</a>
+                        <button id="audioToggle" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5" title="Toggle Audio">
+                            <i class="fas fa-volume-up" id="audioIcon"></i>
+                        </button>
                         <a href="#contact" class="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-yellow-600/20 transition-all transform hover:scale-105 hover:shadow-yellow-500/40 btn-shine">Contact</a>
                     </div>
                 </div>
@@ -61,6 +64,9 @@
                 <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
                 <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
                 <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <button id="audioToggleMobile" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">
+                    <i class="fas fa-volume-up" id="audioIconMobile"></i> Audio
+                </button>
                 <a href="#contact" class="text-yellow-400 block px-3 py-2 rounded-md text-base font-bold bg-slate-800/50">Contact Us</a>
             </div>
         </div>
@@ -502,6 +508,25 @@
             <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> EMS Chaplaincy. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Background Audio -->
+    <audio id="backgroundAudio" autoplay loop muted>
+        <source src="assets/Jesus, with words.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Audio Notification Popup -->
+    <div id="audioNotification" class="audio-notification hidden">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center">
+                <i class="fas fa-music text-purple-900 text-lg"></i>
+            </div>
+            <div>
+                <p class="text-white font-bold text-sm">Jesus, With Words</p>
+                <p class="text-slate-300 text-xs">by Andrew Kerr</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
