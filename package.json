@@ -1,0 +1,11 @@
+{
+  "name": "ems-chaplaincy-website",
+  "version": "1.0.0",
+  "description": "EMS Chaplaincy Website",
+  "scripts": {
+    "build": "node build-blog.js"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
