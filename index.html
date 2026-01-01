@@ -23,6 +23,9 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="bg-slate-900 text-slate-300 antialiased overflow-x-hidden selection:bg-yellow-500 selection:text-purple-900">
 
@@ -534,5 +537,18 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Netlify Identity Redirect -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
