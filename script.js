@@ -216,3 +216,56 @@ function toggleAudio() {
 
 audioToggle.addEventListener('click', toggleAudio);
 audioToggleMobile.addEventListener('click', toggleAudio);
+
+// Contact Form Handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const submitLoading = document.getElementById('submitLoading');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+        
+        // Hide any previous messages
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
+        
+        // Show loading state
+        submitText.classList.add('hidden');
+        submitLoading.classList.remove('hidden');
+        submitBtn.disabled = true;
+        
+        try {
+            const formData = new FormData(contactForm);
+            
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            });
+            
+            if (response.ok) {
+                // Show success message
+                formSuccess.classList.remove('hidden');
+                contactForm.reset();
+                
+                // Scroll to success message
+                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formError.classList.remove('hidden');
+            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } finally {
+            // Reset button state
+            submitText.classList.remove('hidden');
+            submitLoading.classList.add('hidden');
+            submitBtn.disabled = false;
+        }
+    });
+}
