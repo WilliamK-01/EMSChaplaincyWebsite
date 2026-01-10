@@ -23,9 +23,6 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="bg-slate-900 text-slate-300 antialiased overflow-x-hidden selection:bg-yellow-500 selection:text-purple-900">
 
@@ -46,7 +43,6 @@
                         <a href="#about" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">About Us</a>
                         <a href="#services" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Services</a>
                         <a href="#involve" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Get Involved</a>
-                        <a href="blog.html" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5">Blog</a>
                         <button id="audioToggle" class="text-slate-300 hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-0.5" title="Toggle Audio">
                             <i class="fas fa-volume-up" id="audioIcon"></i>
                         </button>
@@ -68,7 +64,6 @@
                 <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
                 <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
                 <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-                <a href="blog.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
                 <button id="audioToggleMobile" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">
                     <i class="fas fa-volume-up" id="audioIconMobile"></i> Audio
                 </button>
@@ -235,6 +230,33 @@
                                 <p class="text-white font-serif text-2xl">"My grace is sufficient" - 2 Corinthians 12:9</p>
                             </div>
                         </div>
+                        <!-- Slide 7 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/475971290_1020887970071164_5768458609429498242_n.jpg" alt="Faithful service" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Serving Together</span>
+                                <p class="text-white font-serif text-2xl">"Let us not grow weary" - Galatians 6:9</p>
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/484592670_1048868363939791_8932532960252998015_n.jpg" alt="Community support" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Community Care</span>
+                                <p class="text-white font-serif text-2xl">"Love your neighbor" - Mark 12:31</p>
+                            </div>
+                        </div>
+                        <!-- Slide 9 -->
+                        <div class="slide fade-slide">
+                            <img src="assets/Slides/486212923_1057067886453172_5450060372359343056_n.jpg" alt="Hope restored" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <span class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-2 block">Hope Restored</span>
+                                <p class="text-white font-serif text-2xl">"I will restore you to health" - Jeremiah 30:17</p>
+                            </div>
+                        </div>
                     </div>
                     <!-- Floating badge -->
                     <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-800 rounded-full p-2 shadow-2xl hidden md:block animate-float border border-slate-700">
@@ -382,7 +404,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Donate</h3>
                         <p class="text-slate-400 mb-8">Your financial contributions enable us to maintain equipment, train volunteers, and reach more scenes.</p>
-                        <button class="bg-purple-900 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-800 transition shadow-lg transform group-hover:-translate-y-1 border border-purple-700">Donate Now</button>
+                        <button id="donateButton" class="bg-purple-900 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-800 transition shadow-lg transform group-hover:-translate-y-1 border border-purple-700">Donate Now</button>
                     </div>
                 </div>
 
@@ -489,7 +511,7 @@
                         </div>
                     </div>
                     
-                    <form id="contactForm" name="contact" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" class="space-y-5">
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5">
                         <!-- Hidden fields for Netlify -->
                         <input type="hidden" name="form-name" value="contact">
                         <p class="hidden">
@@ -537,7 +559,6 @@
                 <a href="#home" class="hover:text-yellow-400 transition">Home</a>
                 <a href="#about" class="hover:text-yellow-400 transition">About</a>
                 <a href="#services" class="hover:text-yellow-400 transition">Services</a>
-                <a href="blog.html" class="hover:text-yellow-400 transition">Blog</a>
                 <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
             </div>
             <p class="mb-4 text-xs text-slate-600">
@@ -566,21 +587,98 @@
         </div>
     </div>
 
+    <!-- Donate Modal -->
+    <div id="donateModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 rounded-2xl shadow-2xl max-w-md w-full border border-purple-500/30 overflow-hidden transform transition-all" data-aos="zoom-in">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-purple-900 to-purple-800 px-8 py-6 relative">
+                <button id="closeModal" class="absolute top-4 right-4 text-white/70 hover:text-white transition">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-hand-holding-dollar text-yellow-400 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Donate</h3>
+                        <p class="text-purple-200 text-sm">Support our mission</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="px-8 py-8">
+                <div class="mb-6">
+                    <p class="text-slate-300 mb-4 text-sm leading-relaxed">Your generous contributions help us continue serving first responders and trauma victims with compassion and care.</p>
+                </div>
+                
+                <!-- Banking Details -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-building-columns text-purple-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Bank</p>
+                            <p class="text-white font-semibold">FNB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-yellow-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-yellow-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Account Name</p>
+                            <p class="text-white font-semibold">EMS Chaplaincy & Trauma support</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-hashtag text-purple-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Account Number</p>
+                            <div class="flex items-center gap-2">
+                                <p class="text-white font-mono text-lg font-semibold" id="accountNumber">626 170 291 12</p>
+                                <button onclick="copyToClipboard('626 170 291 12', 'Account number')" class="text-slate-400 hover:text-yellow-400 transition" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-yellow-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-receipt text-yellow-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Reference</p>
+                            <div class="flex items-center gap-2">
+                                <p class="text-white font-semibold" id="reference">EMS Chaplaincy Website</p>
+                                <button onclick="copyToClipboard('EMS Chaplaincy Website', 'Reference')" class="text-slate-400 hover:text-yellow-400 transition" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-purple-900/20 border border-purple-500/20 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-heart text-red-400 mt-1"></i>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Thank you for your support! Every contribution makes a difference in bringing hope and healing to those in crisis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-    
-    <!-- Netlify Identity Redirect -->
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
 </body>
 </html>
