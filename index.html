@@ -417,7 +417,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-4">Join The Team</h3>
                         <p class="text-slate-400 mb-8">We need dedicated hearts. Whether as Chaplain, Trauma Support, or Care Support, your time is invaluable.</p>
-                        <button class="bg-yellow-600 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-500 transition shadow-lg transform group-hover:-translate-y-1">Volunteer Application</button>
+                        <button id="volunteerButton" class="bg-yellow-600 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-500 transition shadow-lg transform group-hover:-translate-y-1">Volunteer Application</button>
                     </div>
                 </div>
             </div>
@@ -670,6 +670,67 @@
                         <i class="fas fa-heart text-red-400 mt-1"></i>
                         <p class="text-slate-300 text-xs leading-relaxed">
                             Thank you for your support! Every contribution makes a difference in bringing hope and healing to those in crisis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteer Application Modal -->
+    <div id="volunteerModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 rounded-2xl shadow-2xl max-w-md w-full border border-yellow-500/30 overflow-hidden transform transition-all" data-aos="zoom-in">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-yellow-600 to-yellow-500 px-8 py-6 relative">
+                <button id="closeVolunteerModal" class="absolute top-4 right-4 text-white/70 hover:text-white transition">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Volunteer Application</h3>
+                        <p class="text-yellow-100 text-sm">Join our mission</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="px-8 py-8">
+                <div class="mb-6">
+                    <p class="text-slate-300 mb-4 text-sm leading-relaxed">Thank you for your interest in volunteering with EMS Chaplaincy! We're excited to hear from you.</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-yellow-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-yellow-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-slate-500 text-xs uppercase tracking-wide mb-2">Contact us at</p>
+                            <div class="flex items-center gap-2">
+                                <a href="mailto:ems.chaplaincy@gmail.com" class="text-white font-semibold hover:text-yellow-400 transition" id="volunteerEmail">ems.chaplaincy@gmail.com</a>
+                                <button onclick="copyToClipboard('ems.chaplaincy@gmail.com', 'Email address')" class="text-slate-400 hover:text-yellow-400 transition" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-slate-700">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Please email us to enquire about an application form. Include a brief introduction and let us know which role interests you most.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-yellow-900/20 border border-yellow-500/20 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-clock text-yellow-400 mt-1"></i>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            We will get back to you ASAP. Thank you for your willingness to serve alongside us!
                         </p>
                     </div>
                 </div>

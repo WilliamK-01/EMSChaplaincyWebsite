@@ -303,11 +303,48 @@ if (donateModal) {
 
 // Close modal on Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && donateModal && !donateModal.classList.contains('hidden')) {
-        donateModal.classList.add('hidden');
-        document.body.style.overflow = '';
+    if (e.key === 'Escape') {
+        if (donateModal && !donateModal.classList.contains('hidden')) {
+            donateModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        if (volunteerModal && !volunteerModal.classList.contains('hidden')) {
+            volunteerModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
     }
 });
+
+// Volunteer Modal Functionality
+const volunteerButton = document.getElementById('volunteerButton');
+const volunteerModal = document.getElementById('volunteerModal');
+const closeVolunteerModal = document.getElementById('closeVolunteerModal');
+
+// Open volunteer modal
+if (volunteerButton) {
+    volunteerButton.addEventListener('click', () => {
+        volunteerModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+}
+
+// Close volunteer modal on X button
+if (closeVolunteerModal) {
+    closeVolunteerModal.addEventListener('click', () => {
+        volunteerModal.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+}
+
+// Close volunteer modal on outside click
+if (volunteerModal) {
+    volunteerModal.addEventListener('click', (e) => {
+        if (e.target === volunteerModal) {
+            volunteerModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Copy to clipboard function
 function copyToClipboard(text, label) {
