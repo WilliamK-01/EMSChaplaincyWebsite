@@ -66,7 +66,7 @@ function displayPost(post) {
         const schema = JSON.parse(postSchema.textContent);
         schema.headline = post.title;
         schema.description = post.body.substring(0, 160) + '...';
-        schema.image = post.image || 'https://emschaplaincy.netlify.app/assets/EMSPrev.png';
+        schema.image = post.image || 'https://emschaplaincy.site/assets/EMSPrev.png';
         schema.datePublished = isoDate;
         schema.dateModified = isoDate;
         if (post.author) {

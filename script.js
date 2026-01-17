@@ -380,7 +380,7 @@ function handleNewsletterSubmit(event) {
     submitLoading.classList.remove('hidden');
     submitBtn.disabled = true;
     
-    // Submit form via Netlify
+    // Submit form
     fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

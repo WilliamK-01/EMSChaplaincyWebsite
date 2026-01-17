@@ -20,7 +20,7 @@
       "@type": "CollectionPage",
       "name": "EMS Chaplaincy Blog",
       "description": "Stories, insights, and updates from EMS Chaplaincy ministry",
-      "url": "https://emschaplaincy.netlify.app/blog.html"
+      "url": "https://emschaplaincy.site/blog.html"
     }
     </script>
     
@@ -46,8 +46,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </head>
 <body class="bg-slate-900 text-slate-300 antialiased overflow-x-hidden selection:bg-yellow-500 selection:text-purple-900">
 
@@ -126,11 +125,8 @@
             <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Stay Connected</h2>
             <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">Subscribe to receive updates, prayer requests, and stories of hope from the frontlines of emergency care.</p>
             
-            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-md mx-auto" onsubmit="handleNewsletterSubmit(event)">
+            <form name="newsletter" method="POST" class="max-w-md mx-auto" onsubmit="handleNewsletterSubmit(event)">
                 <input type="hidden" name="form-name" value="newsletter">
-                <div class="hidden">
-                    <input name="bot-field">
-                </div>
                 <div class="flex flex-col sm:flex-row gap-3">
                     <input 
                         type="email" 
@@ -184,17 +180,6 @@
     <script src="script.js"></script>
     <script src="blog.js"></script>
     
-    <!-- Netlify Identity Redirect -->
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
+
 </body>
 </html>
