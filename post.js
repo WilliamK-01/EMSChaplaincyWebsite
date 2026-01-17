@@ -49,6 +49,32 @@ function displayPost(post) {
     // Set page title
     document.getElementById('pageTitle').textContent = `${post.title} - EMS Chaplaincy`;
     
+    // Update meta description
+    document.querySelector('meta[name="description"]').setAttribute('content', post.body.substring(0, 160) + '...');
+    
+    // Update Open Graph tags
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', post.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.body.substring(0, 160) + '...');
+    if (post.image) {
+        document.querySelector('meta[property="og:image"]')?.setAttribute('content', post.image);
+    }
+    
+    // Update Schema Markup
+    const postSchema = document.getElementById('postSchema');
+    const isoDate = new Date(post.date).toISOString();
+    if (postSchema) {
+        const schema = JSON.parse(postSchema.textContent);
+        schema.headline = post.title;
+        schema.description = post.body.substring(0, 160) + '...';
+        schema.image = post.image || 'https://emschaplaincy.netlify.app/assets/EMSPrev.png';
+        schema.datePublished = isoDate;
+        schema.dateModified = isoDate;
+        if (post.author) {
+            schema.author.name = post.author;
+        }
+        postSchema.textContent = JSON.stringify(schema);
+    }
+    
     // Set breadcrumb title
     const breadcrumbTitle = document.getElementById('breadcrumbTitle');
     if (breadcrumbTitle) {
