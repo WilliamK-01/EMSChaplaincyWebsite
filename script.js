@@ -365,3 +365,58 @@ function copyToClipboard(text, label) {
         console.error('Failed to copy:', err);
     });
 }
+// Newsletter form submission
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = document.getElementById('newsletterBtn');
+    const submitText = document.getElementById('newsletterText');
+    const submitLoading = document.getElementById('newsletterLoading');
+    const successMessage = document.getElementById('newsletterSuccess');
+    
+    // Show loading state
+    submitText.classList.add('hidden');
+    submitLoading.classList.remove('hidden');
+    submitBtn.disabled = true;
+    
+    // Submit form via Netlify
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(() => {
+        // Show success message
+        successMessage.classList.remove('hidden');
+        form.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            successMessage.classList.add('hidden');
+        }, 5000);
+    })
+    .catch((error) => {
+        console.error('Newsletter submission error:', error);
+        alert('There was an error subscribing. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        submitText.classList.remove('hidden');
+        submitLoading.classList.add('hidden');
+        submitBtn.disabled = false;
+    });
+}
+
+// Register Service Worker for offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registered successfully:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
