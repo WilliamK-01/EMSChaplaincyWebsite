@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: WilliamK-01/EMSChaplaincyWebsite
   branch: main
+  base_url: https://auth.emschaplaincy.site   # Your GitHub OAuth server (set this to your auth endpoint host)
+  auth_endpoint: /api/auth                    # OAuth callback endpoint on that server
 
 media_folder: "assets/blog"
 public_folder: "/assets/blog"
@@ -11,10 +14,12 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Testimony", "Ministry Update", "Prayer Request", "Resources", "News"], required: false }
-      - { label: "Author", name: "author", widget: "string", default: "EMS Chaplaincy Team" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
