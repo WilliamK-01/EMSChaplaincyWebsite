@@ -72,6 +72,26 @@
     <!-- Blog Post Content -->
     <article class="pt-32 pb-20 bg-slate-900 min-h-screen">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2 text-slate-400">
+                    <li>
+                        <a href="index.html" class="hover:text-yellow-400 transition-colors">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </li>
+                    <li>
+                        <a href="blog.html" class="hover:text-yellow-400 transition-colors">Blog</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </li>
+                    <li class="text-yellow-500" id="breadcrumbTitle" aria-current="page">Post</li>
+                </ol>
+            </nav>
             <!-- Loading State -->
             <div id="loadingState" class="text-center py-20">
                 <i class="fas fa-spinner fa-spin text-6xl text-slate-700 mb-4"></i>

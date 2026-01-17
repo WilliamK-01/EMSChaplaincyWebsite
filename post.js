@@ -49,6 +49,12 @@ function displayPost(post) {
     // Set page title
     document.getElementById('pageTitle').textContent = `${post.title} - EMS Chaplaincy`;
     
+    // Set breadcrumb title
+    const breadcrumbTitle = document.getElementById('breadcrumbTitle');
+    if (breadcrumbTitle) {
+        breadcrumbTitle.textContent = post.title.length > 40 ? post.title.substring(0, 40) + '...' : post.title;
+    }
+    
     // Set post title
     document.getElementById('postTitle').textContent = post.title;
     
