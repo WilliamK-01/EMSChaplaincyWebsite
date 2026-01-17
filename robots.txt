@@ -1,0 +1,19 @@
+# Robots.txt for EMS Chaplaincy Website
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin.html
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://emschaplaincy.netlify.app/sitemap.xml
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific
+User-agent: Bingbot
+Allow: /
