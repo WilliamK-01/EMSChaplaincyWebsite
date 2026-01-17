@@ -1,3 +1,5 @@
+site_url: https://emschaplaincy.site
+
 backend:
   name: github
   repo: WilliamK-01/EMSChaplaincyWebsite
