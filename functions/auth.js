@@ -9,7 +9,7 @@ export async function onRequest(context) {
   }
 
   // Enforce only the auth route
-  if (url.pathname !== "/api/auth") {
+  if (url.pathname !== "/auth") {
     return new Response("Not found", { status: 404 });
   }
 
@@ -25,7 +25,7 @@ export async function onRequest(context) {
     });
   }
 
-  const redirectUri = `${url.origin}/api/auth`;
+  const redirectUri = `${url.origin}/auth`;
 
   // Step 1: no code, redirect to GitHub authorize
   const code = url.searchParams.get("code");
