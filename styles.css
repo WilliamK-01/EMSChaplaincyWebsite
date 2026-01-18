@@ -192,6 +192,53 @@
     }
 }
 
+/* Blog post markdown content styling */
+#postBody h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+#postBody h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+    font-family: 'Cinzel', serif;
+}
+
+#postBody h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#postBody p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: rgb(203 213 225);
+}
+
+#postBody blockquote {
+    border-left: 4px solid rgb(245 158 11);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: rgb(148 163 184);
+}
+
+#postBody hr {
+    border: none;
+    border-top: 1px solid rgb(51 65 85);
+    margin: 2rem 0;
+}
+
 @media (max-width: 640px) {
     .audio-notification {
         bottom: 1rem;

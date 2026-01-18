@@ -115,6 +115,15 @@ function displayPost(post) {
         `;
     }
     
+    // Configure marked options
+    if (typeof marked !== 'undefined') {
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            headerIds: true
+        });
+    }
+    
     // Convert markdown to HTML and set post body
     const htmlContent = marked.parse(post.body);
     document.getElementById('postBody').innerHTML = htmlContent;

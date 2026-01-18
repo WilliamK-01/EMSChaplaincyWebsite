@@ -46,8 +46,22 @@ function createBlogCard(post) {
         day: 'numeric' 
     });
     
-    const excerpt = post.body.substring(0, 150) + '...';
-    const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    // Use description if available, otherwise strip markdown and create excerpt from body
+    let excerpt;
+    if (post.description) {
+        excerpt = post.description;
+    } else {
+        // Strip markdown syntax for preview
+        const plainText = post.body
+            .replace(/#{1,6}\s/g, '')  // Remove heading markers
+            .replace(/[*_~`]/g, '')     // Remove emphasis markers
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // Convert links to text
+            .replace(/\n+/g, ' ');      // Replace newlines with spaces
+        excerpt = plainText.substring(0, 150).trim() + '...';
+    }
+    
+    // Use slug from post data
+    const slug = post.slug || post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     
     return `
         <article class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover group">
