@@ -230,8 +230,8 @@ if (contactForm) {
         const formError = document.getElementById('formError');
         
         // Hide any previous messages
-        formSuccess.classList.add('hidden');
-        formError.classList.add('hidden');
+        if (formSuccess) formSuccess.classList.add('hidden');
+        if (formError) formError.classList.add('hidden');
         
         // Show loading state
         submitText.classList.add('hidden');
@@ -241,26 +241,31 @@ if (contactForm) {
         try {
             const formData = new FormData(contactForm);
             
-            const response = await fetch('/', {
+            // Send to Cloudflare Pages Function
+            const response = await fetch('/api/contact', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
+                body: formData
             });
             
-            if (response.ok) {
+            const data = await response.json();
+            
+            if (response.ok && data.success) {
                 // Show success message
-                formSuccess.classList.remove('hidden');
+                if (formSuccess) {
+                    formSuccess.classList.remove('hidden');
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
                 contactForm.reset();
-                
-                // Scroll to success message
-                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
-                throw new Error('Form submission failed');
+                throw new Error(data.error || 'Form submission failed');
             }
         } catch (error) {
             console.error('Form submission error:', error);
-            formError.classList.remove('hidden');
-            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (formError) {
+                formError.textContent = error.message || 'Failed to send message. Please try again.';
+                formError.classList.remove('hidden');
+                formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         } finally {
             // Reset button state
             submitText.classList.remove('hidden');
