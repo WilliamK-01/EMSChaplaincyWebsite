@@ -3,7 +3,7 @@ async function loadBlogPosts() {
     const blogContainer = document.getElementById('blogPosts');
     
     try {
-        // Fetch blog posts from Decap CMS
+        // Fetch blog posts from JSON
         const response = await fetch('/blog-posts.json');
         
         if (!response.ok) {
