@@ -49,15 +49,28 @@ function displayPost(post) {
     // Set page title
     document.getElementById('pageTitle').textContent = `${post.title} - EMS Chaplaincy`;
     
+    // Use description or create excerpt from body
+    const description = post.description || post.body.substring(0, 160).trim() + '...';
+    
     // Update meta description
-    document.querySelector('meta[name="description"]').setAttribute('content', post.body.substring(0, 160) + '...');
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+    
+    // Ensure image URL is absolute
+    const absoluteImageUrl = post.image 
+        ? (post.image.startsWith('http') ? post.image : `https://emschaplaincy.site${post.image}`)
+        : 'https://emschaplaincy.site/assets/EMSPrev.png';
     
     // Update Open Graph tags
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', post.title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.body.substring(0, 160) + '...');
-    if (post.image) {
-        document.querySelector('meta[property="og:image"]')?.setAttribute('content', post.image);
-    }
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content', absoluteImageUrl);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+    
+    // Update Twitter Card tags
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', post.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', absoluteImageUrl);
+    document.querySelector('meta[name="twitter:url"]')?.setAttribute('content', window.location.href);
     
     // Update Schema Markup
     const postSchema = document.getElementById('postSchema');
