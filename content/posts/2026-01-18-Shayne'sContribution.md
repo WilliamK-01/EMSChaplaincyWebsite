@@ -2,8 +2,8 @@
 title: "Who cares for the Carers?"
 date: "2026-01-18"
 author: "Chaplain Shayne Van Der Heever"
-cover: "/assets/blog/ShayneBlog.png"
-excerpt: "The Role of EMS Chaplaincy in Emergency Services."
+featured_image: "/assets/blog/ShayneBlog.png"
+description: "The Role of EMS Chaplaincy in Emergency Services."
 tags: [chaplaincy,trauma, ems]
 ---
 
